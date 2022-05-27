@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{ahorcado.titulo}"/>
+    <link rel="icon" href="data:,"/>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}"/>
+</head>
+<body>
+<div th:replace="fragments/cabecera :: datos"></div>
+<h1 th:text="${resultado}"></h1>
+<fieldset class="cajon">
+    <legend class="negrita" th:text="#{ahorcado.leyenda}"/>
+    <form id="ahorcado" th:action="@{/juego/ahorcado}" method="post">
+        <span class="negrita" th:text="#{ahorcado.adivina}"/>
+        <div class="borde" th:each="letra: ${palabra}">
+            <fieldset class="cuadrado">
+                <span th:text="${letra}"/>
+            </fieldset>
+        </div>
+        <br/>
+        <img th:class="${listaIntento.get(fallos)}" th:src="@{/img/fondo.png}">
+        <br/>
+        <br/>
+        <span class="negrita" th:text="#{ahorcado.ingrese}"/>
+        <input class="caja" type="text" id="letra" name="letra"/>
+        <input type="submit" th:value="#{ahorcado.prueba}"/>
+        <br/>
+        <br/>
+        <span class="negrita" th:text="#{ahorcado.palabraOculta}"/>
+        <span th:text="${palabraOculta}"/>
+        <br/>
+        <span class="negrita" th:text="#{ahorcado.intentos}"/>
+        <span th:text="${intentos}"/>
+        <br/>
+        <span class="negrita" th:text="#{ahorcado.fallos}"/>
+        <span th:text="${fallos}"/>
+        <br/>
+    </form>
+    <br/>
+    <form id="nuevaPartida" th:action="@{/juego/nuevaPartida}" method="post">
+        <input type="submit" th:value="#{ahorcado.nuevaPartida}"/>
+        <a href="/acceso/logout"><input type="button" th:value="#{ahorcado.desconexion}"/></a>
+    </form>
+</fieldset>
+</body>
+</html>

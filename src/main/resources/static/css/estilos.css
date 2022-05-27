@@ -1,0 +1,61 @@
+.rojo {
+	color:red;
+}
+.negrita {
+	font-weight: bold;
+}
+.cabecera {
+    width: 48%;
+    float: left;
+}
+.borde {
+    display: inline-block;
+}
+.cajita {
+    width: 20%;
+}
+.cajon {
+    width: 48%;
+}
+.cuadrado {
+    width: 25%;
+    display: inline-block;
+}
+.caja {
+    width: 2%;
+}
+.uno {
+    width: 78px;
+    height: 92px;
+    background: url(/img/ahorcado.jpg) -470px 0;
+}
+.dos {
+    width: 78px;
+    height: 92px;
+    background: url(/img/ahorcado.jpg) -392px 0;
+}
+.tres {
+    width: 78px;
+    height: 92px;
+    background: url(/img/ahorcado.jpg) -314px 0;
+}
+.cuatro {
+    width: 78px;
+    height: 92px;
+    background: url(/img/ahorcado.jpg) -236px 0;
+}
+.cinco {
+    width: 78px;
+    height: 92px;
+    background: url(/img/ahorcado.jpg) -158px 0;
+}
+.seis {
+    width: 78px;
+    height: 92px;
+    background: url(/img/ahorcado.jpg) -80px 0;
+}
+.siete {
+    width: 78px;
+    height: 92px;
+    background: url(/img/ahorcado.jpg) -2px 0;
+}

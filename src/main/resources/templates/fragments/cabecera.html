@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div th:fragment="datos">
+    <fieldset class="cabecera">
+        <legend class="negrita" th:text="#{cabecera.cliente}"/>
+        <span class="negrita" th:text="#{cabecera.direccionIP}"/>
+        <span th:text="${direccionIP}"/>
+        <br/>
+        <span class="negrita" th:text="#{cabecera.direccionMAC}"/>
+        <span th:text="${direccionMAC}"/>
+        <br/>
+        <span class="negrita" th:text="#{cabecera.navegador}"/>
+        <span th:text="${navegador}"/>
+    </fieldset>
+    <fieldset class="cabecera">
+        <legend class="negrita" th:text="#{cabecera.usuario}"></legend>
+        <span class="negrita" th:text="${bienvenida}"/>
+        <span th:text="${textoID}"/>
+        <br/>
+        <span class="negrita" text=""/>
+        <br/>
+        <span class="negrita" th:text="#{cabecera.visitas.previas}"/>
+        <span th:text="${textoCONT}"/>
+        <br/>
+    </fieldset>
+</div>
+</body>
+</html>

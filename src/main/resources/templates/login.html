@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:utext="#{formLogin.title}"></title>
+    <link rel="icon" href="data:,"/>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}"/>
+</head>
+<body>
+<h1 th:text="#{formLogin.h1.titulo}"></h1>
+<div th:replace="fragments/cabecera :: datos"></div>
+<fieldset class="cajita">
+    <legend class="negrita" th:text="#{formLogin.leyenda}"/>
+    <form id="login" th:object="${usuarioLoginDTO}" th:action="@{/acceso/login}" method="post">
+        <label>
+            <span class="rojo negrita">*</span>
+            <span class="negrita" th:text="#{formLogin.usuario.etiqueta}"/>
+            <input type="text" name="usuario" id="usuario" th:field="*{usuario}"/>
+            <span class="rojo negrita" th:each="error: ${#fields.errors('usuario')}" th:utext="|${error} &nbsp;|"/>
+        </label>
+        <br/>
+        <label>
+            <span class="rojo negrita">*</span>
+            <span class="negrita" th:text="#{formLogin.clave.etiqueta}"/>
+            <input type="password" name="clave" id="clave" th:field="*{clave}"/>
+            <span class="rojo negrita" th:each="error: ${#fields.errors('clave')}" th:utext="|${error} &nbsp;|"/>
+        </label>
+        <br/>
+        <span class="rojo negrita" th:text="${otroError}"/>
+        <br/>
+        <input type="submit" th:value="#{formLogin.submit.texto}"/>
+    </form>
+</fieldset>
+</body>
+</html>
